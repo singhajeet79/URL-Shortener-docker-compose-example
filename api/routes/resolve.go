@@ -28,4 +28,3 @@ func ResolveURL(c *fiber.Ctx) error {
 	return c.Redirect(value, 301)
 
 }
-

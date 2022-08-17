@@ -4,6 +4,7 @@ import (
 	"os"
 	"strconv"
 	"time"
+	"uuid"
 
 	"github.com/go-redis/redis/v8"
 	"github.com/gofiber/fiber"
@@ -68,6 +69,11 @@ func ShortenURL(c *fiber.Ctx) error {
 
 	body.URL = helpers.EnforceHTTP(body.URL)
 
+	var id string
+
+	if body.CustomShort == "" {
+		id = uuid.New().String()[:6]
+	}
 
 	r2.Decr(database.Ctx, c.IP())
 }
