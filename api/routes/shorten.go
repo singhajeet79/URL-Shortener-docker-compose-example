@@ -92,7 +92,7 @@ func ShortenURL(c *fiber.Ctx) error {
 		body.Expiry = 24
 	}
 
-	err = r.Set(database.Ctx, id, body.URL, body.Expiry*3600*time.Second)
+	err = r.Set(database.Ctx, id, body.URL, body.Expiry*3600*time.Second).Err()
 	if err != nil {
 		c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 			"error": "Unable to connect to the server.",
