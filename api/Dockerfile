@@ -1,12 +1,12 @@
 FROM golang:alpine as builder
 
-RUN mkdir /build
+RUN mkdir /builder
 
 ADD . /build/
 
 WORKDIR /build
 
-RUN go build -o main.
+RUN go build -o main .
 
 
 # STAGE 2
