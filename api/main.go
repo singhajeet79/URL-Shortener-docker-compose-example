@@ -5,9 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/gofiber/fiber/"
-	"github.com/gofiber/fiber/middleware/logger"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/hamees-sayed/URL-Shortener/routes"
+	"github.com/joho/godotenv"
 )
 
 func setupRoutes(app *fiber.App) {
